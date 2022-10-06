@@ -1,0 +1,31 @@
+@import './helpers/media-size.scss';
+.hidden{
+   display: none;
+}
+.block{
+   display: block;
+}
+.flex{
+   display: flex;
+}
+.grid{
+   display: grid;
+}
+.active-btn{
+   background-color: var(--gray-color);
+   color:var(--bg-color);
+   color: red;
+}
+.container{
+   margin:0 auto;
+}
+@media($mobileScreen){
+   .container{
+      width:90%;
+   }
+}
+@media(min-width:1200px){
+  .container{
+     width:50%;
+  }
+}

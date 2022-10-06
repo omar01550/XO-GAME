@@ -1,0 +1,123 @@
+//imports
+@import './helpers/mixins.scss';
+@import './helpers/media-size.scss';
+@import './helpers/classes.scss';
+
+//variabls
+:root{
+    --bg-color:rgba(3,26,39,0.78);
+    --sky-color:rgba(30, 222, 224, 1);
+    --gold-color:rgba(237, 212, 21, 1);
+    --gray-color:rgba(179, 199, 199, 1);
+    --font-weight:bold;
+}
+
+*{
+   @include reset-page;
+}
+button{
+   border:none;
+}
+
+html{
+   font-size:16px;
+}
+main{
+   min-height: 100vh;
+   width:100%;
+   background-color: var(--bg-color);
+ }
+
+// start section start page
+.start-page{
+    width:100%;
+    min-height:100vh;
+    @include flex(center,center);
+
+    & span{
+        font-size:3rem;
+        font-weight: var(--font-weight);
+    }
+    & h1 span:nth-child(1){
+       color: var(--sky-color);
+    }
+
+    & h1 span:nth-child(2){
+       color: var(--gold-color);
+    }
+
+}
+.start-page .chose-player{
+    text-align:center;
+    color: white;
+    margin-top:20px;
+  //  background-color: black;
+    padding:10px;
+    font-weight: var(--font-weight);
+    text-transform: uppercase;
+
+}
+
+.start-page .container{
+   //background-color: red;
+   @include flex(center,center);
+   flex-direction:column;
+   padding: 40px 0;
+   margin-bottom: 130px;
+}
+
+.start-page .chose-player .btns{
+    margin-top:15px;
+    background-color: rgba(27, 28, 38, 0.8);
+    @include flex(center,center);
+    border-radius: 7px;
+
+}
+.chose-player .btns button{
+   width: 50%;
+   cursor: pointer;
+   padding:5px 10px;
+   border-radius:10px;
+   text-transform: capitalize;
+   font-weight: var(--font-weight);
+   background-color: rgba(27, 28, 38, 0.8);
+   color:white;
+   font-size:2rem;
+
+
+}
+
+
+.play-with{
+   margin-top:15px;
+   @include flex(center,center);
+   flex-wrap:wrap;
+
+   & :nth-child(1){
+      background-color: var(--gold-color);
+     }
+   & :nth-child(2){
+      background-color: var(--sky-color);
+     }
+
+}
+.play-with button{
+   margin-top:0.5rem;
+   width:100%;
+   cursor: pointer;
+   margin-top:0.7rem;
+   text-transform:uppercase;
+   font-weight:var(--font-weight);
+   padding:7px 0;
+   border-radius:10px;
+   font-size:1.3rem;
+
+}
+
+
+// _classes
+.chose-player .btns .active-btn{
+   background-color: var(--gray-color);
+   color:var(--bg-color);
+  
+}

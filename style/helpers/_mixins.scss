@@ -1,0 +1,14 @@
+@mixin flex($justify,$align){
+    display: flex;
+    justify-content: $justify;
+    align-items:$align;
+    flex-direction: row;
+}
+
+@mixin reset-page{
+   padding: 0;
+   margin: 0;
+   box-sizing:border-box;
+   outline: none;
+   scroll-behavior: smooth;
+ }
