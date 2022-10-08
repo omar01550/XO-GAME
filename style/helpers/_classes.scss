@@ -11,6 +11,22 @@
 .grid{
    display: grid;
 }
+.win{
+   background-color:var(--win-color);
+}
+.pointer{
+   cursor: pointer;
+}
+.x{
+   color: var(--sky-color);
+   font-weight:800;
+   font-size:3rem;
+}
+.o{
+   color: var(--gold-color);
+   font-weight:800;
+   font-size:3rem;
+}
 .active-btn{
    background-color: var(--gray-color);
    color:var(--bg-color);
@@ -18,7 +34,7 @@
 }
 .container{
    margin:0 auto;
-}
+  }
 @media($mobileScreen){
    .container{
       width:90%;
@@ -26,6 +42,7 @@
 }
 @media(min-width:1200px){
   .container{
-     width:50%;
+    width:30%;
+
   }
 }

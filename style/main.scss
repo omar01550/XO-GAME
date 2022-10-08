@@ -6,10 +6,12 @@
 //variabls
 :root{
     --bg-color:rgba(3,26,39,0.78);
+    --secondry-color:black;
+    --win-color:rgba(61,174,56,0.8);
     --sky-color:rgba(30, 222, 224, 1);
     --gold-color:rgba(237, 212, 21, 1);
     --gray-color:rgba(179, 199, 199, 1);
-    --font-weight:bold;
+    --font-weight:800;
 }
 
 *{
@@ -22,11 +24,29 @@ button{
 html{
    font-size:16px;
 }
+body{
+
+ font-family: 'Cairo', sans-serif;
+
+}
 main{
    min-height: 100vh;
    width:100%;
    background-color: var(--bg-color);
+
  }
+ .back-btn{
+    position: fixed;
+    left:30px;
+    top:30px;
+    padding:10px 20px;
+    background-color: black;
+    color:white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 // start section start page
 .start-page{
@@ -59,7 +79,6 @@ main{
 }
 
 .start-page .container{
-   //background-color: red;
    @include flex(center,center);
    flex-direction:column;
    padding: 40px 0;
@@ -114,10 +133,97 @@ main{
 
 }
 
+// section game game-page
+
+.game-page{
+  width:100%;
+  min-height:100vh;
+  @include flex(center,center);
+
+}
+
+.game-page .container{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   justify-items:center;
+   align-items: center;
+   grid-gap:10px;
+}
+
+.game-page .container > div{
+   cursor: pointer;
+}
+
+.game-page .container .xo span:nth-child(1){
+    color: var(--sky-color);
+    font-weight: var(--font-weight);
+    font-size:2rem;
+}
+
+.game-page .container .xo span:nth-child(2){
+  color: var(--gold-color);
+  font-weight: var(--font-weight);
+  font-size:2rem;
+}
+
+.turn button{
+   padding:5px 10px;
+   color: white;
+   background-color:black;
+   border-radius:5px;
+}
+
+.current-player{
+   font-weight: bold;
+   font-size:1.2rem;
+}
+.retry button{
+   padding:7px;
+   color:var(--main-color);
+   background-color: var(--gray-color);
+   font-size: 1rem;
+   border-radius:5px;
+}
+.squ{
+   width:100px;
+   height:100px;
+   background-color: var(--secondry-color);
+   border-radius:10px;
+   box-shadow:3px 3px 3px 3px var(--main-color);
+   @include flex(center,center);
+   user-select: none;
+   cursor: pointer;
+}
+
+.result{
+   padding:0;
+   border-radius:5px;
+   @include flex(center,center);
+   flex-direction: column;
+   width:100px;
+}
+.result > *{
+  font-weight:bold;
+}
+.your-score{
+   background-color: var(--sky-color);
+
+}
+
+.ties{
+    background-color: var(--gray-color);
+}
+.other-score{
+    background-color: var(--gold-color);
+}
 
 // _classes
 .chose-player .btns .active-btn{
    background-color: var(--gray-color);
    color:var(--bg-color);
-  
+
 }
+
+
+
+@import './helpers/classes.scss';

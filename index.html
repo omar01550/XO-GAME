@@ -2,8 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style/main.css">
-    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   <link rel="stylesheet" href="style/main.css">
+  <title></title>
   </head>
   <body>
       <main>
@@ -22,16 +26,84 @@
                          </div>
 
                          <div class="play-with">
-                              <button type="button" name="button" class="play-width-cpu">new game with cpu</button>
-                              <button type="button" name="button" class="play-width-friend">new game with your friend</button>
+                              <button type="button" name="button" class="play-width-cpu" data-target="cpu">new game with cpu</button>
+                              <button type="button" name="button" class="play-width-friend" data-target="friend">new game with your friend</button>
                          </div>
                     </div>
 
                </div>
            </section>
-           <section class="game-page">
+           <section class="game-page hidden">
+             <button type="button" name="button" class="back-btn">back</button>
 
+                <div class="container">
+                     <div class="xo">
+                        <span>X</span>
+                        <span>O</span>
+                     </div>
+                     <div class="turn">
+
+                         <button type="button" name="button" class="pointer">
+                            <span class="current-player">x</span>
+                           turn
+                         </button>
+                     </div>
+                     <div class="retry">
+                          <button type="button" name="button"><i class="fa fa-repeat pointer" aria-hidden="false"></i></button>
+                     </div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="squ"></div>
+                     <div class="your-score result">
+
+                            <div class="">
+                              <small>x</small>
+                              <span>you</span>
+                            </div>
+                            <span class="x-score">0</span>
+                     </div>
+                     <div class="ties result">
+
+                            <span>ties</span>
+                            <span>0</span>
+
+                     </div>
+                     <div class="other-score result">
+
+
+                               <div class="">
+                                 <small>0</small>
+                                 <span>cpu</span>
+                               </div>
+                               <span class="o-score">0</span>
+
+                     </div>
+                </div>
            </section>
+           <!-- sounds -->
+
+
+           <audio class="click-sound">
+                <source src="game-sounds/Shutter Click sound effect (no copyright )(MP3_320K).mp3" type="audio/mp3">
+                <source src="game-sounds/Shutter Click sound effect (no copyright )(MP3_320K).mp3" type="audio/ogg">
+                <source src="game-sounds/Shutter Click sound effect (no copyright )(MP3_320K).mp3" type="audio/mpeg">
+           </audio>
+
+
+
+            <audio class="win-sound">
+                <source src="game-sounds/Bell Transition sound effect _ No copyright(MP3_320K).mp3" type="audio/mp3">
+                <source src="game-sounds/Bell Transition sound effect _ No copyright(MP3_320K).mp3" type="audio/mpeg">
+                <source src="game-sounds/Bell Transition sound effect _ No copyright(MP3_320K).mp3" type="audio/ogg">
+            </audio>
+           <!-- sounds -->
+
       </main>
 
       <script src="src/main.js" charset="utf-8"></script>

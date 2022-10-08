@@ -12,6 +12,22 @@
 .grid {
   display: grid; }
 
+.win {
+  background-color: var(--win-color); }
+
+.pointer {
+  cursor: pointer; }
+
+.x {
+  color: var(--sky-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.o {
+  color: var(--gold-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
 .active-btn {
   background-color: var(--gray-color);
   color: var(--bg-color);
@@ -25,13 +41,15 @@
     width: 90%; } }
 @media (min-width: 1200px) {
   .container {
-    width: 50%; } }
+    width: 30%; } }
 :root {
   --bg-color:rgba(3,26,39,0.78);
+  --secondry-color:black;
+  --win-color:rgba(61,174,56,0.8);
   --sky-color:rgba(30, 222, 224, 1);
   --gold-color:rgba(237, 212, 21, 1);
   --gray-color:rgba(179, 199, 199, 1);
-  --font-weight:bold; }
+  --font-weight:800; }
 
 * {
   padding: 0;
@@ -47,10 +65,24 @@ button {
 html {
   font-size: 16px; }
 
+body {
+  font-family: 'Cairo', sans-serif; }
+
 main {
   min-height: 100vh;
   width: 100%;
   background-color: var(--bg-color); }
+
+.back-btn {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer; }
 
 .start-page {
   width: 100%;
@@ -164,8 +196,166 @@ main {
   border-radius: 10px;
   font-size: 1.3rem; }
 
+.game-page {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.game-page .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px; }
+
+.game-page .container > div {
+  cursor: pointer; }
+
+.game-page .container .xo span:nth-child(1) {
+  color: var(--sky-color);
+  font-weight: var(--font-weight);
+  font-size: 2rem; }
+
+.game-page .container .xo span:nth-child(2) {
+  color: var(--gold-color);
+  font-weight: var(--font-weight);
+  font-size: 2rem; }
+
+.turn button {
+  padding: 5px 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px; }
+
+.current-player {
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+.retry button {
+  padding: 7px;
+  color: var(--main-color);
+  background-color: var(--gray-color);
+  font-size: 1rem;
+  border-radius: 5px; }
+
+.squ {
+  width: 100px;
+  height: 100px;
+  background-color: var(--secondry-color);
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 3px 3px var(--main-color);
+          box-shadow: 3px 3px 3px 3px var(--main-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer; }
+
+.result {
+  padding: 0;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+  width: 100px; }
+
+.result > * {
+  font-weight: bold; }
+
+.your-score {
+  background-color: var(--sky-color); }
+
+.ties {
+  background-color: var(--gray-color); }
+
+.other-score {
+  background-color: var(--gold-color); }
+
 .chose-player .btns .active-btn {
   background-color: var(--gray-color);
   color: var(--bg-color); }
+
+.hidden {
+  display: none; }
+
+.block {
+  display: block; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.grid {
+  display: grid; }
+
+.win {
+  background-color: var(--win-color); }
+
+.pointer {
+  cursor: pointer; }
+
+.x {
+  color: var(--sky-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.o {
+  color: var(--gold-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.active-btn {
+  background-color: var(--gray-color);
+  color: var(--bg-color);
+  color: red; }
+
+.container {
+  margin: 0 auto; }
+
+@media (max-width: 573px) {
+  .container {
+    width: 90%; } }
+@media (min-width: 1200px) {
+  .container {
+    width: 30%; } }
 
 /*# sourceMappingURL=main.css.map */
